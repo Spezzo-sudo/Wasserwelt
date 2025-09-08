@@ -1,0 +1,32 @@
+name: Android Debug APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Build web
+        working-directory: app
+        run: |
+          npm ci
+          npm run build
+          npm i -D @capacitor/cli @capacitor/core
+          npx cap init "Neo Hydraulik" "com.neohydraulik.game" --web-dir=dist --npm-client npm || true
+          npx cap add android || true
+          npx cap copy
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - uses: android-actions/setup-android@v3
+      - name: Build debug APK
+        working-directory: app/android
+        run: ./gradlew assembleDebug
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: neo-hydraulik-debug-apk
+          path: app/android/app/build/outputs/apk/debug/*.apk
