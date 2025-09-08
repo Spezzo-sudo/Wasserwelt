@@ -1,0 +1,2 @@
+// Capacitor settings file – required for Android build
+apply from: "../../node_modules/@capacitor/android/capacitor.settings.gradle"
