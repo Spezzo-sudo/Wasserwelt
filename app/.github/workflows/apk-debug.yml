@@ -57,7 +57,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Build Debug APK
-        working-directory: android
+        working-directory: app/android
         run: ./gradlew --no-daemon assembleDebug
 
       - name: Upload APK Artifact
