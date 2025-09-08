@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">neo-hydraulik</string>
+    <string name="title_activity_main">neo-hydraulik</string>
+    <string name="package_name">com.spezzo.wasserwelt</string>
+    <string name="custom_url_scheme">com.spezzo.wasserwelt</string>
+</resources>
