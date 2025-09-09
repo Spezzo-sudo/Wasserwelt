@@ -1,8 +1,10 @@
-import type { CapacitorConfig } from '@capacitor/cli'
+import type { CapacitorConfig } from '@capacitor/cli';
+
 const config: CapacitorConfig = {
   appId: 'com.neohydraulik.game',
   appName: 'NeoHydraulik',
   webDir: 'dist',
-  android: { path: 'android' }
-}
-export default config
+  android: { projectPath: 'android' }
+};
+
+export default config;
