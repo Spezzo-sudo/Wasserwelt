@@ -16,3 +16,9 @@ rootProject.name = "neo-hydraulik"
 
 include(":app")
 project(":app").projectDir = new File("android/app")
+
+include(":capacitor-android")
+project(":capacitor-android").projectDir = new File("android/capacitor")
+
+include(":capacitor-cordova-android-plugins")
+project(":capacitor-cordova-android-plugins").projectDir = new File("android/capacitor-cordova-android-plugins")

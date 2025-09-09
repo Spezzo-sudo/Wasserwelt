@@ -1,9 +1,8 @@
-import type { CapacitorConfig } from '@capacitor/cli';
-
+import type { CapacitorConfig } from '@capacitor/cli'
 const config: CapacitorConfig = {
-  appId: 'com.spezzo.wasserwelt',
-  appName: 'neo-hydraulik',
-  webDir: 'dist'
-};
-
-export default config;
+  appId: 'com.neohydraulik.game',
+  appName: 'NeoHydraulik',
+  webDir: 'dist',
+  android: { path: 'android' }
+}
+export default config
